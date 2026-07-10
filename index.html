@@ -146,30 +146,32 @@ Unlock My Gift 🎁
 
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
 <script>
-
-function showPassword(){
-
-document.getElementById("passwordBox").style.display="block";
-
+function showPassword() {
+    document.getElementById("passwordBox").style.display = "block";
 }
 
-function checkPassword(){
+function checkPassword() {
+    const pass = document.getElementById("password").value;
 
-let pass=document.getElementById("password").value;
+    if (pass === "21072001") {
 
-if(pass==="21072001"){
+        confetti({
+            particleCount: 180,
+            spread: 120,
+            origin: { y: 0.6 }
+        });
 
-window.location.href="gift.html";
+        setTimeout(() => {
+            window.location.href = "gift.html";
+        }, 1800);
 
-}else{
-
-document.getElementById("error").innerHTML="Wrong password ❤️";
-
+    } else {
+        document.getElementById("error").innerHTML = "Wrong password ❤️";
+    }
 }
-
-}
-
 </script>
 
 </body>
