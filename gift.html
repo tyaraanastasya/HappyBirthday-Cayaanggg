@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>🎂 Happy Birthday, My Favorite Person</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Cormorant+Garamond:wght@400;600;700&display=swap"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- LOADING -->
+
+<div id="loader">
+
+<h2>🎧 Headphones Recommended</h2>
+
+<p>A Birthday Gift Made With Love.</p>
+
+</div>
+
+<!-- MUSIC -->
+
+<audio id="music">
+
+<source src="assets/music/birthday.mp3" type="audio/mpeg">
+
+</audio>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div id="stars"></div>
+
+<div class="overlay"></div>
+
+<div class="content">
+
+<p class="mini">
+
+FOR MY FAVORITE HUMAN
+
+</p>
+
+<h1>
+
+Happy Birthday
+
+<br>
+
+<span>Cayaanggg ❤️</span>
+
+</h1>
+
+<p class="birthday">
+
+21 July 2001
+
+</p>
+
+<p class="desc">
+
+Today is all about celebrating
+
+someone who makes
+
+my world happier.
+
+</p>
+
+<button id="openBtn">
+
+💌 Open My Birthday Gift
+
+</button>
+
+</div>
+
+</section>
+
+<!-- LETTER -->
+
+<section id="letter">
+
+<div class="letter-box">
+
+<h2>
+
+💌 My Letter
+
+</h2>
+
+<p id="typing"></p>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section class="gallery reveal">
+
+<h2>Moments That Made Me Smile ✨</h2>
+
+<div class="gallery-grid">
+
+<img src="assets/images/photo1.jpeg" onclick="openImage(this.src)">
+<img src="assets/images/photo2.jpeg" onclick="openImage(this.src)">
+<img src="assets/images/photo3.jpeg" onclick="openImage(this.src)">
+<img src="assets/images/photo4.jpeg" onclick="openImage(this.src)">
+<img src="assets/images/photo5.jpeg" onclick="openImage(this.src)">
+<img src="assets/images/photo6.jpeg" onclick="openImage(this.src)">
+<img src="assets/images/photo7.jpeg" onclick="openImage(this.src)">
+
+</div>
+
+</section>
+
+<div id="lightbox">
+
+<span onclick="closeImage()">&times;</span>
+
+<img id="lightbox-img">
+
+</div>
+
+<!-- TOGETHER -->
+
+<section id="together">
+
+<h2>
+
+Together Since
+
+</h2>
+
+<h1 id="days">
+
+000
+
+</h1>
+
+<p>
+
+17 August 2025 ❤️
+
+</p>
+
+</section>
+
+<!-- REASONS -->
+
+<section id="reasons">
+
+<h2>
+
+Why You're So Special To Me
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+❤️
+
+<p>
+
+You always calm me down.
+
+</p>
+
+</div>
+
+<div class="card">
+
+❤️
+
+<p>
+
+You always make me laugh.
+
+</p>
+
+</div>
+
+<div class="card">
+
+❤️
+
+<p>
+
+You never stop convincing me
+
+everything will be okay.
+
+</p>
+
+</div>
+
+<div class="card">
+
+❤️
+
+<p>
+
+You always follow
+
+my random behavior.
+
+</p>
+
+</div>
+
+<div class="card">
+
+❤️
+
+<p>
+
+Because you're simply you.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ENDING -->
+
+<section id="ending">
+
+<h2>
+
+One Last Thing...
+
+</h2>
+
+<h1>
+
+Happy Birthday,
+
+My Favorite Human.
+
+</h1>
+
+<p>
+
+Thank you
+
+for existing.
+
+❤️
+
+</p>
+
+<section class="love-counter">
+
+    <h2>Together Since 💞</h2>
+
+    <div class="counter-card">
+
+        <div class="number" id="days">0</div>
+
+        <p>days with you</p>
+
+        <span>17 August 2025 ❤️</span>
+
+    </div>
+
+</section>
+
+</section>
+
+<footer>
+
+Made with love,
+
+Tyara 🤍
+
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

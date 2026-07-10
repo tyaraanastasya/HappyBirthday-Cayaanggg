@@ -45,3 +45,23 @@ function closeImage(){
 document.getElementById("lightbox").style.display="none";
 
 }
+
+const reveals=document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll",()=>{
+
+reveals.forEach(reveal=>{
+
+const top=reveal.getBoundingClientRect().top;
+
+const windowHeight=window.innerHeight;
+
+if(top<windowHeight-120){
+
+reveal.classList.add("active");
+
+}
+
+});
+
+});

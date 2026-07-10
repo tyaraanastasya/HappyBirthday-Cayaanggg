@@ -1,292 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<title>A Little Surprise ❤️</title>
 
-<title>🎂 Happy Birthday, My Favorite Person</title>
+<style>
 
-<link rel="stylesheet" href="css/style.css">
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+body{
 
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
+background:#08111f;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+overflow:hidden;
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Cormorant+Garamond:wght@400;600;700&display=swap"
-rel="stylesheet">
+}
+
+.card{
+
+background:#111d31;
+padding:50px;
+border-radius:25px;
+width:400px;
+max-width:90%;
+text-align:center;
+color:white;
+box-shadow:0 20px 50px rgba(0,0,0,.4);
+
+}
+
+h1{
+
+font-size:40px;
+margin-bottom:15px;
+
+}
+
+p{
+
+color:#c9d1d9;
+line-height:1.7;
+margin-bottom:25px;
+
+}
+
+button{
+
+padding:14px 35px;
+border:none;
+border-radius:50px;
+background:#ff7aa2;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:scale(1.05);
+
+}
+
+#passwordBox{
+
+display:none;
+margin-top:30px;
+
+}
+
+input{
+
+width:100%;
+padding:14px;
+border:none;
+border-radius:12px;
+margin-bottom:15px;
+font-size:16px;
+text-align:center;
+
+}
+
+#error{
+
+color:#ff8b8b;
+margin-top:10px;
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-<!-- LOADING -->
+<div class="card">
 
-<div id="loader">
+<h1>🎂</h1>
 
-<h2>🎧 Headphones Recommended</h2>
+<h2>Happy Birthday</h2>
 
-<p>A Birthday Gift Made With Love.</p>
+<p>
 
-</div>
+I made something just for you.<br><br>
 
-<!-- MUSIC -->
+Before you open it...<br>
 
-<audio id="music">
-
-<source src="assets/music/birthday.mp3" type="audio/mpeg">
-
-</audio>
-
-<!-- HERO -->
-
-<section class="hero">
-
-<div id="stars"></div>
-
-<div class="overlay"></div>
-
-<div class="content">
-
-<p class="mini">
-
-FOR MY FAVORITE HUMAN
+there's one little thing you need to do ❤️
 
 </p>
 
-<h1>
+<button onclick="showPassword()">
 
-Happy Birthday
-
-<br>
-
-<span>Cayaanggg ❤️</span>
-
-</h1>
-
-<p class="birthday">
-
-21 July 2001
-
-</p>
-
-<p class="desc">
-
-Today is all about celebrating
-
-someone who makes
-
-my world happier.
-
-</p>
-
-<button id="openBtn">
-
-💌 Open My Birthday Gift
+Continue
 
 </button>
 
-</div>
+<div id="passwordBox">
 
-</section>
+<input
+type="password"
+id="password"
+placeholder="Enter your birthday">
 
-<!-- LETTER -->
+<button onclick="checkPassword()">
 
-<section id="letter">
+Unlock My Gift 🎁
 
-<div class="letter-box">
+</button>
 
-<h2>
-
-💌 My Letter
-
-</h2>
-
-<p id="typing"></p>
-
-</div>
-
-</section>
-
-<!-- GALLERY -->
-
-<section id="gallery">
-
-<h2>
-
-Moments That Made Me Smile
-
-</h2>
-
-<div class="gallery-grid">
-
-<img src="assets/images/photo1.jpeg">
-
-<img src="assets/images/photo2.jpeg">
-
-<img src="assets/images/photo3.jpeg">
-
-<img src="assets/images/photo4.jpeg">
-
-<img src="assets/images/photo5.jpeg">
-
-<img src="assets/images/photo6.jpeg">
-
-<img src="assets/images/photo7.jpeg">
-
-</div>
-
-</section>
-
-<!-- TOGETHER -->
-
-<section id="together">
-
-<h2>
-
-Together Since
-
-</h2>
-
-<h1 id="days">
-
-000
-
-</h1>
-
-<p>
-
-17 August 2025 ❤️
-
-</p>
-
-</section>
-
-<!-- REASONS -->
-
-<section id="reasons">
-
-<h2>
-
-Why You're So Special To Me
-
-</h2>
-
-<div class="cards">
-
-<div class="card">
-
-❤️
-
-<p>
-
-You always calm me down.
-
-</p>
-
-</div>
-
-<div class="card">
-
-❤️
-
-<p>
-
-You always make me laugh.
-
-</p>
-
-</div>
-
-<div class="card">
-
-❤️
-
-<p>
-
-You never stop convincing me
-
-everything will be okay.
-
-</p>
-
-</div>
-
-<div class="card">
-
-❤️
-
-<p>
-
-You always follow
-
-my random behavior.
-
-</p>
-
-</div>
-
-<div class="card">
-
-❤️
-
-<p>
-
-Because you're simply you.
-
-</p>
+<p id="error"></p>
 
 </div>
 
 </div>
 
-</section>
+<script>
 
-<!-- ENDING -->
+function showPassword(){
 
-<section id="ending">
+document.getElementById("passwordBox").style.display="block";
 
-<h2>
+}
 
-One Last Thing...
+function checkPassword(){
 
-</h2>
+let pass=document.getElementById("password").value;
 
-<h1>
+if(pass==="21072001"){
 
-Happy Birthday,
+window.location.href="gift.html";
 
-My Favorite Human.
+}else{
 
-</h1>
+document.getElementById("error").innerHTML="Wrong password ❤️";
 
-<p>
+}
 
-Thank you
+}
 
-for existing.
-
-❤️
-
-</p>
-
-</section>
-
-<footer>
-
-Made with love,
-
-Tyara 🤍
-
-</footer>
-
-<script src="js/script.js"></script>
+</script>
 
 </body>
-
 </html>
