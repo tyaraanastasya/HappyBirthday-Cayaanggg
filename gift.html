@@ -25,6 +25,24 @@ rel="stylesheet">
 
 <body>
 
+<div id="intro">
+
+    <div class="intro-content">
+
+        <div id="loadingText">Loading memories...</div>
+
+        <div id="loadingPercent">0%</div>
+
+        <h1 id="typing"></h1>
+
+        <p id="subtitle">
+            I hope this little website can make you smile today ❤️
+        </p>
+
+    </div>
+
+</div>
+
 <!-- LOADING -->
 
 <div id="loader">
@@ -97,195 +115,147 @@ my world happier.
 
 <!-- LETTER -->
 
-<section id="letter">
+<section id="letter" class="reveal">
 
-<div class="letter-box">
+    <h2>💌 A Letter For You</h2>
 
-<h2>
+    <div class="envelope" onclick="openLetter()">
 
-💌 My Letter
+        <div class="envelope-front">
+            📩
+            <p>Open My Letter</p>
+        </div>
 
-</h2>
+    </div>
 
-<p id="typing"></p>
+    <div class="letter-paper" id="letterPaper">
 
-</div>
+        <p id="typingLetter"></p>
+
+        <div class="signature">
+            <br><br>
+            With all my love,<br>
+            <strong>Tyara 🤍</strong>
+        </div>
+
+    </div>
 
 </section>
 
 <!-- GALLERY -->
 
-<section class="gallery reveal">
+<section id="story" class="reveal">
 
-<h2>Moments That Made Me Smile ✨</h2>
+    <h2>❤️ Our Story</h2>
 
-<div class="gallery-grid">
+    <div class="story-item">
 
-<img src="assets/images/photo1.jpeg" onclick="openImage(this.src)">
-<img src="assets/images/photo2.jpeg" onclick="openImage(this.src)">
-<img src="assets/images/photo3.jpeg" onclick="openImage(this.src)">
-<img src="assets/images/photo4.jpeg" onclick="openImage(this.src)">
-<img src="assets/images/photo5.jpeg" onclick="openImage(this.src)">
-<img src="assets/images/photo6.jpeg" onclick="openImage(this.src)">
-<img src="assets/images/photo7.jpeg" onclick="openImage(this.src)">
+        <div class="story-date">
+            17 August 2025
+        </div>
 
-</div>
+        <img src="assets/images/photo2.jpeg">
 
-</section>
+        <h3>Where Everything Started</h3>
 
-<div id="lightbox">
+        <p>
+            Our story started here.
+            I never thought this day would become one of my favorite memories.
+        </p>
 
-<span onclick="closeImage()">&times;</span>
+    </div>
 
-<img id="lightbox-img">
+    <div class="story-item">
 
-</div>
+        <img src="assets/images/photo1.jpeg">
 
-<!-- TOGETHER -->
+        <h3>Our First Photobooth</h3>
 
-<section id="together">
+        <p>
+            Looking at these pictures still makes me smile.
+            Thank you for being beside me.
+        </p>
 
-<h2>
+    </div>
 
-Together Since
+    <div class="story-item">
 
-</h2>
+        <img src="assets/images/photo3.jpeg">
 
-<h1 id="days">
+        <h3>Camping Together</h3>
 
-000
+        <p>
+            Home isn't a place anymore.
+            It's wherever I'm with you.
+        </p>
 
-</h1>
+    </div>
 
-<p>
+    <div class="story-item">
 
-17 August 2025 ❤️
+        <img src="assets/images/photo4.jpeg">
 
-</p>
+        <h3>Little Adventures</h3>
 
-</section>
+        <p>
+            My favorite adventures
+            will always be the ones with you.
+        </p>
 
-<!-- REASONS -->
+    </div>
 
-<section id="reasons">
+    <div class="story-item">
 
-<h2>
+        <img src="assets/images/photo6.jpeg">
 
-Why You're So Special To Me
+        <h3>Today</h3>
 
-</h2>
+        <p>
 
-<div class="cards">
+            Happy Birthday,
+            My Favorite Human.
 
-<div class="card">
+            Thank you
+            for existing.
 
-❤️
+            ❤️
 
-<p>
+        </p>
 
-You always calm me down.
-
-</p>
-
-</div>
-
-<div class="card">
-
-❤️
-
-<p>
-
-You always make me laugh.
-
-</p>
-
-</div>
-
-<div class="card">
-
-❤️
-
-<p>
-
-You never stop convincing me
-
-everything will be okay.
-
-</p>
-
-</div>
-
-<div class="card">
-
-❤️
-
-<p>
-
-You always follow
-
-my random behavior.
-
-</p>
-
-</div>
-
-<div class="card">
-
-❤️
-
-<p>
-
-Because you're simply you.
-
-</p>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 <!-- ENDING -->
 
-<section id="ending">
+<section id="ending" class="reveal">
 
 <h2>
 
-One Last Thing...
+One Last Surprise
+
+🎁
 
 </h2>
 
-<h1>
+<button id="endingButton">
 
-Happy Birthday,
+Open
 
-My Favorite Human.
+</button>
 
-</h1>
+</section>
 
-<p>
+<div id="endingMovie">
 
-Thank you
+<div class="movieText">
 
-for existing.
+<p id="movieTyping"></p>
 
-❤️
+</div>
 
-</p>
+</div>
 
-<section class="love-counter">
-
-    <h2>Together Since 💞</h2>
-
-    <div class="counter-card">
-
-        <div class="number" id="days">0</div>
-
-        <p>days with you</p>
-
-        <span>17 August 2025 ❤️</span>
-
-    </div>
 
 </section>
 

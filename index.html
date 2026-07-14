@@ -105,6 +105,20 @@ margin-top:10px;
 
 <body>
 
+    <div id="loadingScreen">
+
+    <div class="loading-content">
+
+        <h1>❤️</h1>
+
+        <h2>Welcome, My Favorite Human</h2>
+
+        <p>I made this little gift with all my love.</p>
+
+    </div>
+
+</div>
+
 <div class="card">
 
 <h1>🎂</h1>
@@ -159,17 +173,19 @@ function checkPassword() {
     if (pass === "21072001") {
 
         confetti({
-            particleCount: 180,
-            spread: 120,
-            origin: { y: 0.6 }
-        });
+    particleCount:180,
+    spread:120,
+    origin:{y:0.6}
+});
 
-        setTimeout(() => {
-            window.location.href = "gift.html";
-        }, 1800);
+document.getElementById("loadingScreen").classList.add("show");
 
-    } else {
-        document.getElementById("error").innerHTML = "Wrong password ❤️";
+setTimeout(function(){
+
+    window.location.href="gift.html";
+
+},3000);
+
     }
 }
 </script>
