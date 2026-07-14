@@ -850,3 +850,56 @@ line-height:2;
 color:white;
 
 }
+
+/* =========================
+   SAFARI DARK MODE FIX
+========================= */
+
+html{
+    color-scheme:light only;
+    background:#08111f;
+}
+
+body{
+    background:#08111f !important;
+    color:#ffffff !important;
+    -webkit-text-size-adjust:100%;
+}
+
+#intro{
+    background:#08111f !important;
+}
+
+.intro-content{
+    color:#ffffff !important;
+}
+
+#typing{
+    color:#ffffff !important;
+    -webkit-text-fill-color:#ffffff !important;
+}
+
+#subtitle{
+    color:#d7d7d7 !important;
+    -webkit-text-fill-color:#d7d7d7 !important;
+}
+
+#loadingText{
+    color:#ffffff !important;
+    -webkit-text-fill-color:#ffffff !important;
+}
+
+#loadingPercent{
+    color:#ff7aa2 !important;
+    -webkit-text-fill-color:#ff7aa2 !important;
+}
+
+#endingMovie{
+    background:#08111f !important;
+}
+
+.movieText,
+#movieTyping{
+    color:#ffffff !important;
+    -webkit-text-fill-color:#ffffff !important;
+}

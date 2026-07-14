@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="only light">
+<meta name="theme-color" content="#08111f">
 
 <title>A Little Surprise ❤️</title>
 
@@ -97,6 +99,75 @@ text-align:center;
 color:#ff8b8b;
 margin-top:10px;
 
+}
+
+/* SAFARI DARK MODE FIX */
+
+html{
+    color-scheme: light only;
+    background:#08111f;
+}
+
+body{
+    background:#08111f !important;
+    color:#ffffff !important;
+    -webkit-text-size-adjust:100%;
+}
+
+.card{
+    background:#111d31 !important;
+    color:#ffffff !important;
+}
+
+.card h1,
+.card h2{
+    color:#ffffff !important;
+    -webkit-text-fill-color:#ffffff !important;
+}
+
+.card p{
+    color:#c9d1d9 !important;
+    -webkit-text-fill-color:#c9d1d9 !important;
+}
+
+#loadingScreen{
+    background:#08111f !important;
+}
+
+.loading-content{
+    color:#ffffff !important;
+}
+
+.loading-content h1,
+.loading-content h2{
+    color:#ffffff !important;
+    -webkit-text-fill-color:#ffffff !important;
+}
+
+.loading-content p{
+    color:#d8d8d8 !important;
+    -webkit-text-fill-color:#d8d8d8 !important;
+}
+
+input{
+    background:#ffffff !important;
+    color:#08111f !important;
+    -webkit-text-fill-color:#08111f !important;
+    color-scheme:light;
+}
+
+input::placeholder{
+    color:#777777 !important;
+    -webkit-text-fill-color:#777777 !important;
+    opacity:1;
+}
+
+button{
+    background:#ff7aa2 !important;
+    color:#ffffff !important;
+    -webkit-text-fill-color:#ffffff !important;
+    -webkit-appearance:none;
+    appearance:none;
 }
 
 </style>
