@@ -170,6 +170,41 @@ button{
     appearance:none;
 }
 
+/* =========================
+   IPHONE SAFARI WELCOME FIX
+========================= */
+
+#welcome h1,
+#welcomeTitle,
+.welcome h1,
+.welcome-title,
+.welcome-content h1 {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    opacity: 1 !important;
+    background: none !important;
+    background-image: none !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+}
+
+@media (prefers-color-scheme: dark) {
+
+    #welcome h1,
+    #welcomeTitle,
+    .welcome h1,
+    .welcome-title,
+    .welcome-content h1 {
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+        background: transparent !important;
+        background-image: none !important;
+        opacity: 1 !important;
+    }
+
+}
+
 </style>
 
 </head>
