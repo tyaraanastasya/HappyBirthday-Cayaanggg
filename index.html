@@ -1,300 +1,607 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="only light">
-<meta name="theme-color" content="#08111f">
+    <meta charset="UTF-8">
 
-<title>A Little Surprise ❤️</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
 
-<style>
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#081423">
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins,sans-serif;
-}
+    <title>🎂 Happy Birthday, My Favorite Human</title>
 
-body{
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-background:#08111f;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-overflow:hidden;
+        html {
+            background: #081423;
+        }
 
-}
+        body {
+            min-height: 100vh;
+            min-height: 100dvh;
 
-.card{
+            background: #081423 !important;
+            color: #ffffff !important;
 
-background:#111d31;
-padding:50px;
-border-radius:25px;
-width:400px;
-max-width:90%;
-text-align:center;
-color:white;
-box-shadow:0 20px 50px rgba(0,0,0,.4);
+            font-family: Arial, Helvetica, sans-serif;
 
-}
+            overflow: hidden;
 
-h1{
+            -webkit-text-size-adjust: 100%;
+        }
 
-font-size:40px;
-margin-bottom:15px;
+        button,
+        input {
+            font: inherit;
+        }
 
-}
+        button {
+            -webkit-appearance: none;
+            appearance: none;
+        }
 
-p{
+        /* =========================
+           SCENE
+        ========================= */
 
-color:#c9d1d9;
-line-height:1.7;
-margin-bottom:25px;
+        .scene {
+            position: fixed;
+            inset: 0;
 
-}
+            width: 100%;
+            min-height: 100vh;
+            min-height: 100dvh;
 
-button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-padding:14px 35px;
-border:none;
-border-radius:50px;
-background:#ff7aa2;
-color:white;
-font-size:16px;
-cursor:pointer;
-transition:.3s;
+            padding:
+                calc(30px + env(safe-area-inset-top))
+                25px
+                calc(30px + env(safe-area-inset-bottom));
 
-}
+            background: #081423 !important;
 
-button:hover{
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease,
+                visibility 0.7s;
+        }
 
-transform:scale(1.05);
+        .scene-content {
+            width: 100%;
+            max-width: 430px;
 
-}
+            text-align: center;
+        }
 
-#passwordBox{
+        /* =========================
+           SCENE 1
+        ========================= */
 
-display:none;
-margin-top:30px;
+        #sceneOne {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            z-index: 2;
+        }
 
-}
+        #sceneOne.hide {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-30px);
+            pointer-events: none;
+        }
 
-input{
+        .cake {
+            display: block;
 
-width:100%;
-padding:14px;
-border:none;
-border-radius:12px;
-margin-bottom:15px;
-font-size:16px;
-text-align:center;
+            margin-bottom: 28px;
 
-}
+            font-size: 70px;
+            line-height: 1;
+        }
 
-#error{
+        .birthday-title {
+            color: #ffffff !important;
 
-color:#ff8b8b;
-margin-top:10px;
+            font-size: clamp(42px, 12vw, 68px);
+            line-height: 0.95;
+            font-weight: 800;
 
-}
+            letter-spacing: -2px;
 
-/* SAFARI DARK MODE FIX */
+            margin-bottom: 28px;
+        }
 
-html{
-    color-scheme: light only;
-    background:#08111f;
-}
+        .birthday-subtitle {
+            color: #ffffff !important;
 
-body{
-    background:#08111f !important;
-    color:#ffffff !important;
-    -webkit-text-size-adjust:100%;
-}
+            font-size: clamp(20px, 5.5vw, 27px);
+            line-height: 1.5;
 
-.card{
-    background:#111d31 !important;
-    color:#ffffff !important;
-}
+            opacity: 0.9;
 
-.card h1,
-.card h2{
-    color:#ffffff !important;
-    -webkit-text-fill-color:#ffffff !important;
-}
+            margin-bottom: 52px;
+        }
 
-.card p{
-    color:#c9d1d9 !important;
-    -webkit-text-fill-color:#c9d1d9 !important;
-}
+        .before-text {
+            color: #ffffff !important;
 
-#loadingScreen{
-    background:#08111f !important;
-}
+            font-size: clamp(19px, 5vw, 25px);
+            line-height: 1.55;
 
-.loading-content{
-    color:#ffffff !important;
-}
+            opacity: 0.88;
 
-.loading-content h1,
-.loading-content h2{
-    color:#ffffff !important;
-    -webkit-text-fill-color:#ffffff !important;
-}
+            margin-bottom: 42px;
+        }
 
-.loading-content p{
-    color:#d8d8d8 !important;
-    -webkit-text-fill-color:#d8d8d8 !important;
-}
+        /* =========================
+           BUTTON
+        ========================= */
 
-input{
-    background:#ffffff !important;
-    color:#08111f !important;
-    -webkit-text-fill-color:#08111f !important;
-    color-scheme:light;
-}
+        .main-button {
+            width: min(100%, 270px);
+            min-height: 64px;
 
-input::placeholder{
-    color:#777777 !important;
-    -webkit-text-fill-color:#777777 !important;
-    opacity:1;
-}
+            border: none;
+            border-radius: 999px;
 
-button{
-    background:#ff7aa2 !important;
-    color:#ffffff !important;
-    -webkit-text-fill-color:#ffffff !important;
-    -webkit-appearance:none;
-    appearance:none;
-}
+            padding: 16px 30px;
 
-/* =========================
-   IPHONE SAFARI WELCOME FIX
-========================= */
+            background: #ff73a1 !important;
+            color: #ffffff !important;
 
-#welcome h1,
-#welcomeTitle,
-.welcome h1,
-.welcome-title,
-.welcome-content h1 {
-    color: #ffffff !important;
-    -webkit-text-fill-color: #ffffff !important;
-    opacity: 1 !important;
-    background: none !important;
-    background-image: none !important;
-    -webkit-background-clip: initial !important;
-    background-clip: initial !important;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
-}
+            font-size: 22px;
+            font-weight: 700;
 
-@media (prefers-color-scheme: dark) {
+            cursor: pointer;
 
-    #welcome h1,
-    #welcomeTitle,
-    .welcome h1,
-    .welcome-title,
-    .welcome-content h1 {
-        color: #ffffff !important;
-        -webkit-text-fill-color: #ffffff !important;
-        background: transparent !important;
-        background-image: none !important;
-        opacity: 1 !important;
-    }
+            box-shadow:
+                0 12px 30px rgba(255, 115, 161, 0.25);
 
-}
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
 
-</style>
+        .main-button:active {
+            transform: scale(0.96);
+        }
 
+        /* =========================
+           SCENE 2
+        ========================= */
+
+        #sceneTwo {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(30px);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        #sceneTwo.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            pointer-events: auto;
+            z-index: 3;
+        }
+
+        .heart {
+            display: block;
+
+            margin-bottom: 28px;
+
+            font-size: 68px;
+            line-height: 1;
+
+            animation: heartbeat 1.4s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            15% {
+                transform: scale(1.12);
+            }
+
+            30% {
+                transform: scale(1);
+            }
+
+            45% {
+                transform: scale(1.08);
+            }
+
+            60% {
+                transform: scale(1);
+            }
+        }
+
+        .welcome-title {
+            color: #ffffff !important;
+
+            font-size: clamp(38px, 10vw, 58px);
+            line-height: 1.05;
+            font-weight: 800;
+
+            letter-spacing: -1.5px;
+
+            margin-bottom: 28px;
+        }
+
+        .welcome-text {
+            color: #ffffff !important;
+
+            font-size: clamp(20px, 5.5vw, 26px);
+            line-height: 1.55;
+
+            opacity: 0.9;
+
+            margin-bottom: 48px;
+        }
+
+        /* =========================
+           PASSWORD
+        ========================= */
+
+        .password-wrapper {
+            width: 100%;
+            max-width: 330px;
+
+            margin: 0 auto;
+        }
+
+        #password {
+            display: block;
+
+            width: 100%;
+            height: 66px;
+
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            border-radius: 22px;
+
+            padding: 0 22px;
+
+            background: #ffffff !important;
+            color: #081423 !important;
+
+            font-size: 19px;
+            text-align: center;
+
+            outline: none;
+
+            margin-bottom: 20px;
+        }
+
+        #password::placeholder {
+            color: #777777 !important;
+            opacity: 1;
+        }
+
+        #password:focus {
+            border-color: #ff73a1;
+
+            box-shadow:
+                0 0 0 5px rgba(255, 115, 161, 0.15);
+        }
+
+        .unlock-button {
+            width: 100%;
+            min-height: 68px;
+
+            border: none;
+            border-radius: 999px;
+
+            padding: 15px 25px;
+
+            background: #ff73a1 !important;
+            color: #ffffff !important;
+
+            font-size: 21px;
+            line-height: 1.3;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 12px 30px rgba(255, 115, 161, 0.25);
+
+            transition: transform 0.2s ease;
+        }
+
+        .unlock-button:active {
+            transform: scale(0.96);
+        }
+
+        #error {
+            min-height: 25px;
+
+            margin-top: 18px;
+
+            color: #ff9cbd !important;
+
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+        /* =========================
+           SHAKE
+        ========================= */
+
+        .shake {
+            animation: shake 0.4s ease;
+        }
+
+        @keyframes shake {
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-8px);
+            }
+
+            50% {
+                transform: translateX(8px);
+            }
+
+            75% {
+                transform: translateX(-5px);
+            }
+        }
+
+        /* =========================
+           SMALL IPHONE
+        ========================= */
+
+        @media (max-height: 700px) {
+
+            .cake,
+            .heart {
+                font-size: 50px;
+                margin-bottom: 18px;
+            }
+
+            .birthday-title,
+            .welcome-title {
+                margin-bottom: 18px;
+            }
+
+            .birthday-subtitle {
+                margin-bottom: 28px;
+            }
+
+            .before-text {
+                margin-bottom: 28px;
+            }
+
+            .welcome-text {
+                margin-bottom: 30px;
+            }
+
+            .scene {
+                padding-top:
+                    calc(20px + env(safe-area-inset-top));
+
+                padding-bottom:
+                    calc(20px + env(safe-area-inset-bottom));
+            }
+        }
+    </style>
 </head>
+
 
 <body>
 
-    <div id="loadingScreen">
+    <!-- =========================
+         SCENE ONE
+    ========================== -->
 
-    <div class="loading-content">
+    <section class="scene" id="sceneOne">
 
-        <h1>❤️</h1>
+        <div class="scene-content">
 
-        <h2>Welcome, My Favorite Human</h2>
+            <span class="cake">🎂</span>
 
-        <p>I made this little gift with all my love.</p>
+            <h1 class="birthday-title">
+                Happy<br>
+                Birthday
+            </h1>
 
-    </div>
+            <p class="birthday-subtitle">
+                I made something<br>
+                just for you.
+            </p>
 
-</div>
+            <p class="before-text">
+                Before you open it...<br>
+                there's one little thing<br>
+                you need to do ❤️
+            </p>
 
-<div class="card">
+            <button
+                class="main-button"
+                type="button"
+                onclick="showPassword()"
+            >
+                Continue
+            </button>
 
-<h1>🎂</h1>
+        </div>
 
-<h2>Happy Birthday</h2>
+    </section>
 
-<p>
 
-I made something just for you.<br><br>
+    <!-- =========================
+         SCENE TWO
+    ========================== -->
 
-Before you open it...<br>
+    <section class="scene" id="sceneTwo">
 
-there's one little thing you need to do ❤️
+        <div class="scene-content">
 
-</p>
+            <span class="heart">❤️</span>
 
-<button onclick="showPassword()">
+            <h1 class="welcome-title">
+                Welcome,<br>
+                My Favorite Human.
+            </h1>
 
-Continue
+            <p class="welcome-text">
+                I made this little gift<br>
+                with all my love.
+            </p>
 
-</button>
 
-<div id="passwordBox">
+            <div class="password-wrapper" id="passwordWrapper">
 
-<input
-type="password"
-id="password"
-placeholder="Enter your birthday">
+                <input
+                    type="text"
+                    id="password"
+                    inputmode="numeric"
+                    autocomplete="off"
+                    placeholder="Enter your birthday"
+                    maxlength="8"
+                >
 
-<button onclick="checkPassword()">
 
-Unlock My Gift 🎁
+                <button
+                    class="unlock-button"
+                    type="button"
+                    onclick="checkPassword()"
+                >
+                    Unlock My Gift 🎁
+                </button>
 
-</button>
 
-<p id="error"></p>
+                <p id="error"></p>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    </section>
 
-<script>
-function showPassword() {
-    document.getElementById("passwordBox").style.display = "block";
-}
 
-function checkPassword() {
-    const pass = document.getElementById("password").value;
+    <!-- CONFETTI -->
 
-    if (pass === "21072001") {
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
-        confetti({
-    particleCount:180,
-    spread:120,
-    origin:{y:0.6}
-});
 
-document.getElementById("loadingScreen").classList.add("show");
+    <script>
 
-setTimeout(function(){
+        function showPassword() {
 
-    window.location.href="gift.html";
+            const sceneOne =
+                document.getElementById("sceneOne");
 
-},3000);
+            const sceneTwo =
+                document.getElementById("sceneTwo");
 
-    }
-}
-</script>
+
+            sceneOne.classList.add("hide");
+
+
+            setTimeout(() => {
+
+                sceneTwo.classList.add("show");
+
+            }, 350);
+
+        }
+
+
+        function checkPassword() {
+
+            const password =
+                document.getElementById("password");
+
+            const error =
+                document.getElementById("error");
+
+            const wrapper =
+                document.getElementById("passwordWrapper");
+
+
+            const pass =
+                password.value.trim();
+
+
+            if (pass === "21072001") {
+
+                error.innerHTML = "";
+
+
+                confetti({
+
+                    particleCount: 180,
+
+                    spread: 120,
+
+                    origin: {
+                        y: 0.6
+                    }
+
+                });
+
+
+                setTimeout(() => {
+
+                    window.location.href = "gift.html";
+
+                }, 1800);
+
+
+            } else {
+
+                error.innerHTML =
+                    "Wrong birthday, my love 💗";
+
+
+                wrapper.classList.remove("shake");
+
+
+                void wrapper.offsetWidth;
+
+
+                wrapper.classList.add("shake");
+
+            }
+
+        }
+
+
+        document
+            .getElementById("password")
+            .addEventListener("keydown", function(event) {
+
+                if (event.key === "Enter") {
+
+                    checkPassword();
+
+                }
+
+            });
+
+    </script>
 
 </body>
+
 </html>
